@@ -1,0 +1,60 @@
+---
+title: "Top 10 API Security Mistakes"
+date: "2026-02-07"
+tags: ["security", "api", "oauth"]
+category: "Research"
+author: "Unroll Loop Team"
+description: "The API failures we see most often in production, and the engineering patterns that eliminate them."
+featured: true
+popular: true
+---
+
+Most API incidents are not the result of exotic cryptography failures. They come from ordinary implementation decisions that quietly accumulate risk.
+
+## 1. Treating authN and authZ as the same problem
+
+Verifying a token is not enough. APIs need resource-level authorization checks that survive new endpoints, internal rewrites, and background jobs.
+
+## 2. Shipping overly broad machine identities
+
+Service-to-service credentials tend to grow without review. Prefer scoped identities, short TTLs, and auditable policy definitions.
+
+## 3. Assuming internal APIs are inherently safe
+
+Internal endpoints often power admin actions, bulk exports, and privileged automation. Attackers know that internal APIs are where the sharp edges live.
+
+## 4. Weak schema validation
+
+Reject malformed input early. Strong schema validation closes off entire classes of parser abuse and business-logic surprises.
+
+```ts
+const CreateTokenSchema = z.object({
+  name: z.string().min(3),
+  scopes: z.array(z.string()).max(8),
+  expiresAt: z.string().datetime(),
+});
+```
+
+## 5. Forgetting rate limits on expensive paths
+
+Even authenticated traffic can become abusive. Rate limiting should follow cost, sensitivity, and downstream saturation risk.
+
+## 6. Incomplete audit trails
+
+Logs should connect the caller, the action, the target resource, and the resulting policy decision.
+
+## 7. Poor secret handling in CI
+
+If deployment pipelines expose secrets broadly, API security degrades before the code even reaches production.
+
+## 8. Leaking implementation detail in errors
+
+Sharp error messages help engineers, but they should not reveal token internals, query structures, or customer identifiers.
+
+## 9. No contract for deprecation
+
+Zombie endpoints linger for years. Attach ownership and expiry windows to every public API surface.
+
+## 10. Missing threat-model loops
+
+Threat models need to evolve with architecture. Revisit them when introducing queues, AI agents, webhooks, or third-party integrations.

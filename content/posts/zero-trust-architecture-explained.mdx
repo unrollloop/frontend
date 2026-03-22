@@ -1,0 +1,47 @@
+---
+title: "Zero Trust Architecture Explained"
+date: "2026-01-10"
+tags: ["security", "architecture", "identity"]
+category: "Security"
+author: "Unroll Loop Team"
+description: "A practical breakdown of zero trust architecture, from identity planes to continuous verification."
+featured: true
+popular: true
+---
+
+Zero trust is not a product category. It is an operating model for reducing implicit trust across people, workloads, devices, and internal systems.
+
+<Callout type="info">
+Zero trust works best when identity, observability, and policy automation move together. Doing only one creates elegant diagrams and brittle reality.
+</Callout>
+
+## Start with the trust graph
+
+Every organization already has a trust graph. It includes SSO sessions, service accounts, CI pipelines, VPN access, internal dashboards, and ad hoc scripts running on laptops. Zero trust begins by mapping those relationships and shrinking the blast radius of each edge.
+
+## Identity becomes the control plane
+
+When identity drives authorization, the network stops being the primary gatekeeper. Mature implementations unify workforce and machine identity, issue short-lived credentials, and continuously verify context.
+
+```ts
+export async function evaluateAccess(identity: string, resource: string) {
+  const policies = await loadPolicies(identity);
+  return policies.some((policy) => policy.resource === resource && policy.effect === 'allow');
+}
+```
+
+## Device posture and runtime signals matter
+
+Access decisions should consider patch level, EDR health, recent authentication anomalies, and workload context. Static allowlists are too coarse for modern delivery pipelines.
+
+### Where teams usually get stuck
+
+Teams often deploy stronger SSO but keep long-lived secrets, over-permissioned service accounts, and inherited network trust. That gap creates the illusion of zero trust without the operational guarantees.
+
+<Callout type="warning">
+If your build agents can still talk to every internal service by default, your perimeter just moved into CI.
+</Callout>
+
+## Rollout without breaking velocity
+
+Start with high-value systems, add policy visibility before hard enforcement, and give engineers self-serve diagnostics. The fastest path to adoption is making denied access easy to understand and quick to remediate.

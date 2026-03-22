@@ -1,0 +1,41 @@
+---
+title: "How We Built Our Internal Dev Platform"
+date: "2026-03-01"
+tags: ["engineering", "platform", "devops"]
+category: "Engineering"
+author: "Avery Chen"
+description: "An inside look at the platform choices that reduced toil, tightened controls, and sped up delivery across teams."
+popular: true
+---
+
+Developer platforms fail when they centralize control but ignore developer ergonomics. We designed ours around paved roads, not ticket queues.
+
+## Platform thesis
+
+The platform owns golden paths for application bootstrap, secret delivery, observability, and environment provisioning. Product teams keep autonomy over product logic and release cadence.
+
+## Service templates as leverage
+
+We built opinionated templates for Next.js apps, APIs, and workers. Each template ships with CI, policy checks, logging, and deployment defaults.
+
+```bash
+pnpm create unroll-service --template web-app
+pnpm unroll env pull staging
+pnpm unroll deploy --preview
+```
+
+## Security baked into workflows
+
+Security reviews became lighter once guardrails moved into the platform itself. Teams inherit SSO, secrets rotation, baseline rate limits, and event logging by default.
+
+## Observability first, not last
+
+Every service emits traces, metrics, and structured logs on day one. That kept incident response fast and made platform adoption self-reinforcing.
+
+### Lessons learned
+
+Avoid overfitting the platform to one team. Strong primitives and great documentation outperform hyper-custom abstractions.
+
+<Callout type="info">
+The best platform feature is often the one that removes a manual checklist item without introducing a new approval step.
+</Callout>

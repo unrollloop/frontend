@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Unroll Loop</title>
+  <link>https://unrollloop.com</link>
+  <description>Cyber intelligence, engineering research, and product updates.</description>
+  <item>
+    <title><![CDATA[How We Built Our Internal Dev Platform]]></title>
+    <link>https://unrollloop.com/blog/how-we-built-our-internal-dev-platform</link>
+    <guid>https://unrollloop.com/blog/how-we-built-our-internal-dev-platform</guid>
+    <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[An inside look at the platform choices that reduced toil, tightened controls, and sped up delivery across teams.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Top 10 API Security Mistakes]]></title>
+    <link>https://unrollloop.com/blog/top-10-api-security-mistakes</link>
+    <guid>https://unrollloop.com/blog/top-10-api-security-mistakes</guid>
+    <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[The API failures we see most often in production, and the engineering patterns that eliminate them.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Zero Trust Architecture Explained]]></title>
+    <link>https://unrollloop.com/blog/zero-trust-architecture-explained</link>
+    <guid>https://unrollloop.com/blog/zero-trust-architecture-explained</guid>
+    <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[A practical breakdown of zero trust architecture, from identity planes to continuous verification.]]></description>
+  </item>
+</channel>
+</rss>
