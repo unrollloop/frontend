@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#0B0F14"/>
+  <rect x="40" y="40" width="1120" height="550" rx="32" fill="url(#a)" fill-opacity="0.12" stroke="rgba(255,255,255,0.16)"/>
+  <text x="100" y="250" fill="white" font-family="Arial, sans-serif" font-size="76" font-weight="700">Unroll Loop</text>
+  <text x="100" y="330" fill="#7DD3FC" font-family="Arial, sans-serif" font-size="34">Cyber intelligence for teams building fast.</text>
+  <defs>
+    <linearGradient id="a" x1="0" x2="1200" y1="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>

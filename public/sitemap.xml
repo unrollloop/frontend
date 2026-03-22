@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://unrollloop.com/</loc></url>
+  <url><loc>https://unrollloop.com/blog</loc></url>
+  <url><loc>https://unrollloop.com/about</loc></url>
+  <url><loc>https://unrollloop.com/category/security</loc></url>
+  <url><loc>https://unrollloop.com/category/engineering</loc></url>
+  <url><loc>https://unrollloop.com/category/research</loc></url>
+  <url><loc>https://unrollloop.com/blog/how-we-built-our-internal-dev-platform</loc></url>
+  <url><loc>https://unrollloop.com/blog/top-10-api-security-mistakes</loc></url>
+  <url><loc>https://unrollloop.com/blog/zero-trust-architecture-explained</loc></url>
+</urlset>
