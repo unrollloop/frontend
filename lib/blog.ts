@@ -121,16 +121,18 @@ export async function getCompiledPost(slug: string) {
 }
 
 export function extractHeadings(content: string) {
-  const headingRegex = /^##?\s+(.*)$/gm;
+  const headingRegex = /^(#{1,3})\s+(.*)$/gm;
   const headings: { title: string; id: string; level: number }[] = [];
   let match: RegExpExecArray | null;
 
   while ((match = headingRegex.exec(content)) !== null) {
-    const title = match[1].trim();
+    const [, hashes, rawTitle] = match;
+    const title = rawTitle.trim();
+
     headings.push({
       title,
       id: slugify(title),
-      level: match[0].startsWith('## ') ? 2 : 1,
+      level: hashes.length,
     });
   }
 

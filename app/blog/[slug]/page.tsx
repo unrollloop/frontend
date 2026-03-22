@@ -49,9 +49,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="space-y-10">
           <header className="space-y-5">
             <Badge>{post.category}</Badge>
-            <h1 className="max-w-4xl font-heading text-5xl font-semibold tracking-tight text-white">{post.title}</h1>
-            <p className="max-w-3xl text-lg leading-8 text-slate-300">{post.description}</p>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+            <h1 className="max-w-4xl font-heading text-5xl font-semibold tracking-tight text-foreground">{post.title}</h1>
+            <p className="max-w-3xl text-lg leading-8 text-muted-foreground">{post.description}</p>
+            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
               <span>{formatDate(post.date)}</span>
               <span>{post.readingTime}</span>
               <span>{views.toLocaleString()} views</span>
@@ -59,23 +59,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           </header>
 
-          <div className="prose prose-invert max-w-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-10">
+          <div className="prose max-w-none rounded-[2rem] border border-border/20 bg-card/70 p-6 md:p-10">
             {post.content}
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="font-heading text-2xl font-semibold text-white">Author</p>
+          <div className="rounded-3xl border border-border/20 bg-card/70 p-6">
+            <p className="font-heading text-2xl font-semibold text-foreground">Author</p>
             <Separator />
-            <div className="mt-5 space-y-2 text-sm text-slate-300">
-              <p className="font-medium text-white">{post.author}</p>
+            <div className="mt-5 space-y-2 text-sm text-muted-foreground">
+              <p className="font-medium text-foreground">{post.author}</p>
               <p>Unroll Loop blends threat research with production-grade engineering guidance for modern teams.</p>
             </div>
           </div>
 
           <section className="space-y-6">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500">Related articles</p>
-              <h2 className="mt-3 font-heading text-3xl font-semibold text-white">Continue the thread.</h2>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-subtle-foreground">Related articles</p>
+              <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground">Continue the thread.</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {related.map((item) => <BlogCard key={item.slug} post={item} />)}
