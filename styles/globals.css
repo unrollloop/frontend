@@ -3,7 +3,37 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+  --background: 244 247 251;
+  --foreground: 15 23 42;
+  --muted: 226 232 240;
+  --card: 255 255 255;
+  --surface: 248 250 252;
+  --surface-strong: 241 245 249;
+  --border: 148 163 184;
+  --muted-foreground: 71 85 105;
+  --subtle-foreground: 100 116 139;
+  --primary: 2 132 199;
+  --accent: 124 58 237;
+  --success: 5 150 105;
+  --grid: 148 163 184;
+}
+
+.dark {
   color-scheme: dark;
+  --background: 11 15 20;
+  --foreground: 248 250 252;
+  --muted: 17 24 39;
+  --card: 15 23 42;
+  --surface: 255 255 255;
+  --surface-strong: 2 6 23;
+  --border: 148 163 184;
+  --muted-foreground: 203 213 225;
+  --subtle-foreground: 148 163 184;
+  --primary: 14 165 233;
+  --accent: 139 92 246;
+  --success: 16 185 129;
+  --grid: 148 163 184;
 }
 
 html {
@@ -12,14 +42,16 @@ html {
 
 body {
   @apply bg-background text-foreground antialiased;
-  background-image: radial-gradient(circle at top, rgba(14,165,233,0.08), transparent 35%), radial-gradient(circle at right, rgba(139,92,246,0.1), transparent 25%);
+  background-image:
+    radial-gradient(circle at top, rgb(var(--primary) / 0.08), transparent 35%),
+    radial-gradient(circle at right, rgb(var(--accent) / 0.1), transparent 25%);
 }
 
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(148,163,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(var(--grid) / 0.08) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--grid) / 0.08) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
   pointer-events: none;
@@ -27,14 +59,14 @@ body::before {
 }
 
 .prose {
-  --tw-prose-body: #dbe4f0;
-  --tw-prose-headings: #fff;
-  --tw-prose-links: #38bdf8;
-  --tw-prose-bold: #fff;
-  --tw-prose-quotes: #e2e8f0;
-  --tw-prose-code: #7dd3fc;
+  --tw-prose-body: rgb(var(--muted-foreground));
+  --tw-prose-headings: rgb(var(--foreground));
+  --tw-prose-links: rgb(var(--primary));
+  --tw-prose-bold: rgb(var(--foreground));
+  --tw-prose-quotes: rgb(var(--muted-foreground));
+  --tw-prose-code: rgb(var(--primary));
   --tw-prose-pre-bg: transparent;
-  --tw-prose-bullets: #38bdf8;
+  --tw-prose-bullets: rgb(var(--primary));
 }
 
 .prose pre {

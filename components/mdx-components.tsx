@@ -8,7 +8,7 @@ export const mdxComponents: MDXComponents = {
   code: ({ className, children }) => {
     const isInline = !className;
     if (isInline) {
-      return <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-primary">{children}</code>;
+      return <code className="rounded bg-card px-1.5 py-0.5 font-mono text-sm text-primary">{children}</code>;
     }
     return <code className={className}>{children}</code>;
   },
@@ -20,7 +20,7 @@ export const mdxComponents: MDXComponents = {
     <h2 id={id} className="group flex scroll-m-24 items-center gap-2" {...props}>
       {children}
       <a href={`#${id}`} className="opacity-0 transition group-hover:opacity-100" aria-label="Copy link to heading">
-        <Link2 className="size-4 text-slate-500" />
+        <Link2 className="size-4 text-subtle-foreground" />
       </a>
     </h2>
   ),
@@ -28,7 +28,7 @@ export const mdxComponents: MDXComponents = {
     <h3 id={id} className="group flex scroll-m-24 items-center gap-2" {...props}>
       {children}
       <a href={`#${id}`} className="opacity-0 transition group-hover:opacity-100" aria-label="Copy link to heading">
-        <Link2 className="size-4 text-slate-500" />
+        <Link2 className="size-4 text-subtle-foreground" />
       </a>
     </h3>
   ),
