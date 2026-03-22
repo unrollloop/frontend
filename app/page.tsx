@@ -18,10 +18,10 @@ export default function HomePage() {
           <div className="space-y-8">
             <Badge className="bg-primary/10 text-primary">Cyber intelligence meets developer tooling</Badge>
             <div className="space-y-5">
-              <h1 className="max-w-4xl font-heading text-5xl font-semibold tracking-tight text-white md:text-7xl">
+              <h1 className="max-w-4xl font-heading text-5xl font-semibold tracking-tight text-foreground md:text-7xl">
                 Unrolling Complexity in Cyber &amp; Code
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
                 Precision research, engineering patterns, and product updates for teams defending modern software at speed.
               </p>
             </div>
@@ -39,30 +39,30 @@ export default function HomePage() {
                 { label: 'Engineering deep dives', icon: TerminalSquare },
                 { label: 'AI + DevOps intelligence', icon: Sparkles },
               ].map((item) => (
-                <div key={item.label} className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+                <div key={item.label} className="rounded-3xl border border-border/20 bg-card/70 p-4">
                   <item.icon className="mb-4 size-5 text-primary" />
-                  <p className="text-sm text-slate-300">{item.label}</p>
+                  <p className="text-sm text-muted-foreground">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-glow">
+          <div className="rounded-[2rem] border border-border/20 bg-surface-strong/80 p-6 shadow-glow">
             <div className="mb-5 flex gap-2">
               <span className="size-3 rounded-full bg-rose-400" />
               <span className="size-3 rounded-full bg-amber-400" />
               <span className="size-3 rounded-full bg-emerald-400" />
             </div>
-            <div className="space-y-4 font-mono text-sm text-slate-300">
+            <div className="space-y-4 font-mono text-sm text-muted-foreground">
               <p className="text-primary">&gt; Initializing Unroll Loop…</p>
-              <p><span className="text-slate-500">[intel]</span> ingesting security signals</p>
-              <p><span className="text-slate-500">[eng]</span> translating findings into ship-ready guidance</p>
-              <p><span className="text-slate-500">[ops]</span> delivering clarity without noise</p>
+              <p><span className="text-subtle-foreground">[intel]</span> ingesting security signals</p>
+              <p><span className="text-subtle-foreground">[eng]</span> translating findings into ship-ready guidance</p>
+              <p><span className="text-subtle-foreground">[ops]</span> delivering clarity without noise</p>
             </div>
-            <div className="mt-8 grid gap-3 rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Categories</p>
+            <div className="mt-8 grid gap-3 rounded-3xl border border-border/20 bg-card/70 p-5">
+              <p className="text-xs uppercase tracking-[0.3em] text-subtle-foreground">Categories</p>
               <div className="flex flex-wrap gap-2">
                 {siteConfig.categories.map((category) => (
-                  <Badge key={category} className="border-white/10 bg-white/5 text-slate-300">{category}</Badge>
+                  <Badge key={category} className="border-border/20 bg-background/60 text-muted-foreground">{category}</Badge>
                 ))}
               </div>
             </div>
@@ -73,8 +73,8 @@ export default function HomePage() {
       <section className="container space-y-8 py-12">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500">Featured articles</p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-white">Signal-rich reads for defenders and builders.</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-subtle-foreground">Featured articles</p>
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground">Signal-rich reads for defenders and builders.</h2>
           </div>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
@@ -85,8 +85,8 @@ export default function HomePage() {
       <section className="container py-12">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500">Latest research</p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-white">Fresh analysis from the Unroll Loop team.</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-subtle-foreground">Latest research</p>
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground">Fresh analysis from the Unroll Loop team.</h2>
           </div>
           <Link href="/blog" className="text-sm text-primary">View all</Link>
         </div>

@@ -10,9 +10,9 @@ const links = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/5 bg-background/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-border/10 bg-background/75 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="font-heading text-lg font-semibold tracking-tight text-white">
+        <Link href="/" className="font-heading text-lg font-semibold tracking-tight text-foreground">
           Unroll <span className="text-primary">Loop</span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex">
