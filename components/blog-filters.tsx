@@ -7,11 +7,29 @@ import { Button } from '@/components/ui/button';
 import type { Post } from '@/lib/blog';
 import { slugify } from '@/lib/utils';
 
-export function BlogFilters({ posts, categories, tags }: { posts: Post[]; categories: string[]; tags: string[] }) {
-  const [query, setQuery] = useState('');
-  const [category, setCategory] = useState('all');
-  const [tag, setTag] = useState('all');
-  const [sort, setSort] = useState<'latest' | 'popular'>('latest');
+type BlogFiltersProps = {
+  posts: Post[];
+  categories: string[];
+  tags: string[];
+  initialQuery?: string;
+  initialCategory?: string;
+  initialTag?: string;
+  initialSort?: string;
+};
+
+export function BlogFilters({
+  posts,
+  categories,
+  tags,
+  initialQuery = '',
+  initialCategory = 'all',
+  initialTag = 'all',
+  initialSort = 'latest',
+}: BlogFiltersProps) {
+  const [query, setQuery] = useState(initialQuery);
+  const [category, setCategory] = useState(initialCategory);
+  const [tag, setTag] = useState(initialTag);
+  const [sort, setSort] = useState<'latest' | 'popular'>(initialSort === 'popular' ? 'popular' : 'latest');
 
   const filtered = useMemo(() => {
     return [...posts]
@@ -32,15 +50,15 @@ export function BlogFilters({ posts, categories, tags }: { posts: Post[]; catego
 
   return (
     <div className="space-y-8">
-      <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-5 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+      <div className="grid gap-4 rounded-3xl border border-border/20 bg-card/70 p-5 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <SearchBar value={query} onChange={setQuery} />
-        <select value={category} onChange={(e) => setCategory(e.target.value)} className="rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white">
+        <select value={category} onChange={(e) => setCategory(e.target.value)} className="rounded-2xl border border-border/20 bg-background/70 px-4 text-sm text-foreground outline-none focus:border-primary/60">
           <option value="all">All categories</option>
           {categories.map((item) => (
             <option key={item} value={slugify(item)}>{item}</option>
           ))}
         </select>
-        <select value={tag} onChange={(e) => setTag(e.target.value)} className="rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white">
+        <select value={tag} onChange={(e) => setTag(e.target.value)} className="rounded-2xl border border-border/20 bg-background/70 px-4 text-sm text-foreground outline-none focus:border-primary/60">
           <option value="all">All tags</option>
           {tags.map((item) => (
             <option key={item} value={slugify(item)}>{item}</option>
@@ -54,7 +72,7 @@ export function BlogFilters({ posts, categories, tags }: { posts: Post[]; catego
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((post) => <BlogCard key={post.slug} post={post} />)}
       </div>
-      {filtered.length === 0 ? <p className="text-sm text-slate-400">No articles match this filter set.</p> : null}
+      {filtered.length === 0 ? <p className="text-sm text-muted-foreground">No articles match this filter set.</p> : null}
     </div>
   );
 }

@@ -18,14 +18,18 @@ const config: Config = {
     },
     extend: {
       colors: {
-        background: '#0B0F14',
-        foreground: '#F8FAFC',
-        muted: '#111827',
-        card: 'rgba(15, 23, 42, 0.65)',
-        border: 'rgba(148, 163, 184, 0.15)',
-        primary: '#0EA5E9',
-        accent: '#8B5CF6',
-        success: '#10B981',
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        card: 'rgb(var(--card) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        success: 'rgb(var(--success) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        'surface-strong': 'rgb(var(--surface-strong) / <alpha-value>)',
+        'muted-foreground': 'rgb(var(--muted-foreground) / <alpha-value>)',
+        'subtle-foreground': 'rgb(var(--subtle-foreground) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
@@ -33,11 +37,11 @@ const config: Config = {
         mono: ['var(--font-jetbrains-mono)'],
       },
       backgroundImage: {
-        grid: 'linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px)',
-        glow: 'radial-gradient(circle at top, rgba(14,165,233,0.2), transparent 45%), radial-gradient(circle at bottom right, rgba(139,92,246,0.18), transparent 35%)',
+        grid: 'linear-gradient(rgb(var(--grid) / 0.18) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--grid) / 0.18) 1px, transparent 1px)',
+        glow: 'radial-gradient(circle at top, rgb(var(--primary) / 0.16), transparent 45%), radial-gradient(circle at bottom right, rgb(var(--accent) / 0.14), transparent 35%)',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(14,165,233,0.2), 0 20px 60px rgba(2, 132, 199, 0.12)',
+        glow: '0 0 0 1px rgb(var(--primary) / 0.18), 0 20px 60px rgb(var(--primary) / 0.14)',
       },
       animation: {
         pulsegrid: 'pulsegrid 6s ease-in-out infinite',
